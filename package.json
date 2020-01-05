@@ -2,31 +2,16 @@
   "name": "awetosis-topic-widget",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.0",
-    "@types/react-dom": "^16.9.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0",
-    "typescript": "~3.7.2"
-  },
-  "devDependencies": {
-    "prettier": "^1.19.1",
-    "prettier-plugin-packagejson": "^2.0.6"
-  },
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -39,5 +24,33 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "dependencies": {
+    "@rebass/forms": "^4.0.6",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/rebass": "^4.0.3",
+    "@types/rebass__forms": "^4.0.0",
+    "emotion-theming": "^10.0.27",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hook-form": "^4.4.2",
+    "react-scripts": "3.3.0",
+    "rebass": "^4.0.7",
+    "typescript": "~3.7.2"
+  },
+  "devDependencies": {
+    "husky": "^3.1.0",
+    "prettier": "^1.19.1",
+    "prettier-plugin-packagejson": "^2.0.6",
+    "pretty-quick": "^2.0.1"
   }
 }
