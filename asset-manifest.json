@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/awetosis-topic-widget/static/css/main.a67b9114.chunk.css",
-    "main.js": "/awetosis-topic-widget/static/js/main.caed4793.chunk.js",
-    "main.js.map": "/awetosis-topic-widget/static/js/main.caed4793.chunk.js.map",
+    "main.js": "/awetosis-topic-widget/static/js/main.6c202ef0.chunk.js",
+    "main.js.map": "/awetosis-topic-widget/static/js/main.6c202ef0.chunk.js.map",
     "runtime-main.js": "/awetosis-topic-widget/static/js/runtime-main.c9bf4073.js",
     "runtime-main.js.map": "/awetosis-topic-widget/static/js/runtime-main.c9bf4073.js.map",
-    "static/js/2.6ff0c14f.chunk.js": "/awetosis-topic-widget/static/js/2.6ff0c14f.chunk.js",
-    "static/js/2.6ff0c14f.chunk.js.map": "/awetosis-topic-widget/static/js/2.6ff0c14f.chunk.js.map",
+    "static/js/2.d16ecee2.chunk.js": "/awetosis-topic-widget/static/js/2.d16ecee2.chunk.js",
+    "static/js/2.d16ecee2.chunk.js.map": "/awetosis-topic-widget/static/js/2.d16ecee2.chunk.js.map",
     "index.html": "/awetosis-topic-widget/index.html",
-    "precache-manifest.a11298a4ab349b1b2f9721f1d3a5adb0.js": "/awetosis-topic-widget/precache-manifest.a11298a4ab349b1b2f9721f1d3a5adb0.js",
+    "precache-manifest.bbf9b9d1141665f23bc82bb907036b7b.js": "/awetosis-topic-widget/precache-manifest.bbf9b9d1141665f23bc82bb907036b7b.js",
     "service-worker.js": "/awetosis-topic-widget/service-worker.js",
     "static/css/main.a67b9114.chunk.css.map": "/awetosis-topic-widget/static/css/main.a67b9114.chunk.css.map",
-    "static/js/2.6ff0c14f.chunk.js.LICENSE": "/awetosis-topic-widget/static/js/2.6ff0c14f.chunk.js.LICENSE"
+    "static/js/2.d16ecee2.chunk.js.LICENSE": "/awetosis-topic-widget/static/js/2.d16ecee2.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.c9bf4073.js",
-    "static/js/2.6ff0c14f.chunk.js",
+    "static/js/2.d16ecee2.chunk.js",
     "static/css/main.a67b9114.chunk.css",
-    "static/js/main.caed4793.chunk.js"
+    "static/js/main.6c202ef0.chunk.js"
   ]
 }
