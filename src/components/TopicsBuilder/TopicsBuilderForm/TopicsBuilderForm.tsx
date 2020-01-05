@@ -8,16 +8,38 @@ import { FormTopic, TemporalUnit } from "../../../types";
 import { capitalize } from "../../../utils/strings";
 
 type TopicsBuilderFormProps = {
+  initialTopics?: FormTopic[];
   setTopics: (topics: FormTopic[]) => void;
+};
+
+const blankFormTopic: FormTopic = {
+  text: "",
+  amount: "",
+  unit: TemporalUnit.MINUTES
 };
 
 const createArrayWithNumbers = (length: number): number[] => {
   return Array.from({ length }, (_, k) => k + 1);
 };
 
-const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({ setTopics }) => {
-  const { handleSubmit, register } = useForm();
-  const [size, setSize] = useState(1);
+const formTopicsToFieldValues = (formTopics: FormTopic[]): FieldValues => {
+  const fieldValues: FieldValues = {};
+  formTopics.forEach((formTopic, idx) => {
+    fieldValues[`topic-${idx + 1}-text`] = formTopic.text;
+    fieldValues[`topic-${idx + 1}-amount`] = formTopic.amount;
+    fieldValues[`topic-${idx + 1}-unit`] = formTopic.unit;
+  });
+  return fieldValues;
+};
+
+const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
+  initialTopics = [{ ...blankFormTopic }],
+  setTopics
+}) => {
+  const { handleSubmit, register } = useForm({
+    defaultValues: formTopicsToFieldValues(initialTopics)
+  });
+  const [size, setSize] = useState(initialTopics.length);
   const onSubmit = handleSubmit((values: FieldValues) => {
     const topics: FormTopic[] = [];
     for (let i = 1; i <= size; i += 1) {
