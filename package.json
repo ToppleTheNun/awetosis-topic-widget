@@ -2,6 +2,7 @@
   "name": "awetosis-topic-widget",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://topplethenun.github.io/awetosis-topic-widget",
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
