@@ -13,6 +13,12 @@ export type FormTopic = {
   unit: TemporalUnit;
 };
 
+export type Topic = {
+  text: string;
+  amount: number;
+  unit: TemporalUnit;
+};
+
 export type FormChangeHandler = (
   event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
 ) => void;
