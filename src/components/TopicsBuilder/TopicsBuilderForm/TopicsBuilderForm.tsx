@@ -27,7 +27,7 @@ const formTopicsToFieldValues = (formTopics: FormTopic[]): FieldValues => {
   formTopics.forEach((formTopic, idx) => {
     fieldValues[`topic-${idx + 1}-text`] = formTopic.text;
     fieldValues[`topic-${idx + 1}-amount`] = formTopic.amount;
-    fieldValues[`topic-${idx + 1}-unit`] = formTopic.unit;
+    fieldValues[`topic-${idx + 1}-unit`] = capitalize(formTopic.unit);
   });
   return fieldValues;
 };
@@ -107,19 +107,23 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
         );
       })}
       <Flex flexWrap="wrap" py={2}>
-        <Text pb={2} width={1}>
-          Leave the name field blank to have the builder ignore a topic.
-        </Text>
+        {size > 0 && (
+          <Text pb={2} width={1}>
+            Leave the name field blank to have the builder ignore a topic.
+          </Text>
+        )}
         <Box width={[1, "auto"]}>
           <Button onClick={addTopic} type="button" width={[1, "auto"]}>
             Add Topic
           </Button>
         </Box>
-        <Box pl={[0, 2]} py={[2, 0]} width={[1, "auto"]}>
-          <Button onClick={onSubmit} width={[1, "auto"]}>
-            Submit
-          </Button>
-        </Box>
+        {size > 0 && (
+          <Box pl={[0, 2]} py={[2, 0]} width={[1, "auto"]}>
+            <Button onClick={onSubmit} width={[1, "auto"]}>
+              Submit
+            </Button>
+          </Box>
+        )}
       </Flex>
     </Box>
   );
