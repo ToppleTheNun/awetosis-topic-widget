@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Box, Button, Card, Flex } from "rebass";
+import { Box, Button, Card, Flex, Text } from "rebass";
 import { Input, Label, Select } from "@rebass/forms";
 import { useForm } from "react-hook-form";
 import { FieldValues } from "react-hook-form/dist/types";
@@ -33,16 +33,6 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({ setTopics }) => {
   const addTopic = useCallback(() => {
     setSize(prevState => prevState + 1);
   }, []);
-
-  // const removeTopic = useCallback((idx: number) => {
-  //   setTopics(topics => {
-  //     const values = [...topics];
-  //     console.log(`values=`, values);
-  //     values.splice(idx, 1);
-  //     console.log(`values=`, values);
-  //     return values;
-  //   });
-  // }, []);
 
   return (
     <Box as="form" onSubmit={onSubmit} px={2}>
@@ -90,23 +80,15 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({ setTopics }) => {
                   ))}
                 </Select>
               </Box>
-              <Box width={1} py={2} my="auto">
-                <Button
-                  onClick={() => {
-                    console.log(`removing at index ${idx}`);
-                  }}
-                  variant="destructive"
-                >
-                  Delete
-                </Button>
-              </Box>
             </Flex>
           </Card>
         );
       })}
       <Flex flexWrap="wrap" py={2}>
-        <Box width={[0, "auto"]} />
-        <Box ml="auto" width={[1, "auto"]}>
+        <Text pb={2} width={1}>
+          Leave the name field blank to have the builder ignore a topic.
+        </Text>
+        <Box width={[1, "auto"]}>
           <Button onClick={addTopic} type="button" width={[1, "auto"]}>
             Add Topic
           </Button>
