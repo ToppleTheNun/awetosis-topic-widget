@@ -14,7 +14,6 @@ import {
 const TopicsBuilder: React.FC = () => {
   const query = useQuery();
   const initialTopics: Topic[] = parseJsonStringToTopics(query.get("topics"));
-  console.log(initialTopics);
   const [, setTopics] = useState<Topic[]>([]);
 
   const setFilteredTopics = useCallback((formTopics: FormTopic[]) => {

@@ -8,11 +8,15 @@ import {
 
 import ThemedApp from "../ThemedApp";
 import TopicsBuilder from "../TopicsBuilder";
+import TopicsDisplay from "../TopicsDisplay";
 
 const App: React.FC = () => (
   <ThemedApp>
     <Router>
       <Switch>
+        <Route exact path="/display">
+          <TopicsDisplay />
+        </Route>
         <Route exact path="/">
           <TopicsBuilder />
         </Route>
