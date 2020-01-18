@@ -1,25 +1,57 @@
-import React from "react";
-import { Box, Card, Heading, Text } from "rebass";
-import useQuery from "../../hooks/useQuery";
-import { Topic } from "../../types";
+import React, { useCallback, useMemo, useState } from "react";
+import { Box } from "rebass";
 import { parseJsonStringToTopics } from "../../utils/topics";
-import { capitalize } from "../../utils/strings";
+import TopicCard from "./TopicCard";
+import { DisplayTopic } from "../../types";
+import TopicCountdown from "./TopicCountdown";
+
+const urlSearchParams = new URLSearchParams(window.location.search);
+const topicsFromQuery: DisplayTopic[] = parseJsonStringToTopics(
+  urlSearchParams.get("topics")
+)
+  .filter(topic => topic.amount > 0 && topic.text !== "")
+  .map((topic, idx) => ({ ...topic, complete: false, id: idx }));
 
 const TopicsDisplay: React.FC = () => {
-  const query = useQuery();
-  const topics: Topic[] = parseJsonStringToTopics(query.get("topics"));
+  const [topics, setTopics] = useState(topicsFromQuery);
+  const incompleteTopics = useMemo(
+    () => topics.filter(topic => !topic.complete),
+    [topics]
+  );
+  const firstTopic = useMemo(
+    () => (incompleteTopics.length > 0 ? incompleteTopics[0] : null),
+    [incompleteTopics]
+  );
+  const markFirstTopicAsCompleted = useCallback(() => {
+    if (!firstTopic) {
+      return;
+    }
+    setTopics(oldTopics =>
+      oldTopics.map(oldTopic => {
+        if (oldTopic.id === firstTopic.id) {
+          return { ...oldTopic, complete: true };
+        }
+        return oldTopic;
+      })
+    );
+  }, [firstTopic]);
 
   return (
-    <Box height={1} width={1} bg="gray">
-      {topics.map((topic, idx) => (
-        <Card key={`topic-${idx}`} width={1} px={2} py={2}>
-          <Heading>Topic</Heading>
-          <Text>{topic.text}</Text>
-          <Heading>Duration</Heading>
-          <Text>
-            {topic.amount} {capitalize(topic.unit)}
-          </Text>
-        </Card>
+    <Box>
+      <TopicCountdown
+        currentTopic={firstTopic}
+        markCurrentTopicAsCompleted={markFirstTopicAsCompleted}
+      />
+      {incompleteTopics.map((topic, idx) => (
+        <TopicCard
+          key={`topic-${idx}`}
+          topic={topic}
+          sx={
+            idx !== incompleteTopics.length - 1
+              ? { borderBottom: "1px solid black" }
+              : {}
+          }
+        />
       ))}
     </Box>
   );

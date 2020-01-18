@@ -1,7 +1,6 @@
 import { ChangeEvent } from "react";
 
 export enum TemporalUnit {
-  MILLISECONDS = "MILLISECONDS",
   SECONDS = "SECONDS",
   MINUTES = "MINUTES",
   HOURS = "HOURS"
@@ -18,6 +17,11 @@ export type Topic = {
   amount: number;
   unit: TemporalUnit;
 };
+
+export type DisplayTopic = {
+  id: number;
+  complete: boolean;
+} & Topic;
 
 export type FormChangeHandler = (
   event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
