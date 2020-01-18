@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import { Box, Button, Card, Flex, Text } from "rebass";
 import { Input, Label, Select } from "@rebass/forms";
 import { useForm } from "react-hook-form";
-import { FieldValues } from "react-hook-form/dist/types";
+import { FieldValues } from "react-hook-form";
 
 import { FormTopic, TemporalUnit } from "../../../types";
 import { capitalize } from "../../../utils/strings";
