@@ -14,14 +14,14 @@ const App: React.FC = () => (
   <ThemedApp>
     <Router>
       <Switch>
-        <Route exact path="/display">
+        <Route exact path={`${process.env.PUBLIC_URL}/display`}>
           <TopicsDisplay />
         </Route>
-        <Route exact path="/">
+        <Route exact path={`${process.env.PUBLIC_URL}/`}>
           <TopicsBuilder />
         </Route>
         <Route>
-          <Redirect to={"/"} />
+          <Redirect to={`${process.env.PUBLIC_URL}/`} />
         </Route>
       </Switch>
     </Router>

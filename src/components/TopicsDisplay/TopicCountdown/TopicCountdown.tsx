@@ -25,9 +25,7 @@ const TopicCountdown: React.FC<TopicCountdownProps> = ({
           markCurrentTopicAsCompleted();
           return seconds;
         }
-        const newSeconds = seconds - 1;
-        console.log(`newSeconds = ${newSeconds}`);
-        return newSeconds;
+        return seconds - 1;
       });
     }, 1000);
     return () => clearInterval(interval);
