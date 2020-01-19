@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ca243e42712dcac7065cc58b244c5490",
+    "revision": "6606f6f807208cf9357ad92ea01551c7",
     "url": "/awetosis-topic-widget/index.html"
   },
   {
-    "revision": "d8a8691529b37a77a28d",
+    "revision": "3923c25a7c10bc16a0f0",
     "url": "/awetosis-topic-widget/static/css/main.ee54585b.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/awetosis-topic-widget/static/js/2.a61a2506.chunk.js.LICENSE"
   },
   {
-    "revision": "d8a8691529b37a77a28d",
-    "url": "/awetosis-topic-widget/static/js/main.a0b5bf25.chunk.js"
+    "revision": "3923c25a7c10bc16a0f0",
+    "url": "/awetosis-topic-widget/static/js/main.c916a578.chunk.js"
   },
   {
     "revision": "c4a1dfa0e3508b0edcee",
