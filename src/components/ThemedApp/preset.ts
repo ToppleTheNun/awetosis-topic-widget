@@ -23,14 +23,14 @@ THE SOFTWARE.
 export const preset = {
   breakpoints: ["40em", "52em", "64em"],
   colors: {
-    text: "#000",
-    background: "#fff",
-    primary: "#07c",
-    secondary: "#30c",
-    destructive: "#C00",
-    muted: "#f6f6f9",
-    gray: "#dddddf",
-    highlight: "hsla(205, 100%, 40%, 0.125)"
+    highlight: "hsla(205, 100%, 40%, 0.125)",
+    eerieBlack: "#1d1e1e",
+    registrationBlack: "#000",
+    pastelGray: "#cecece",
+    shadow: "#867962",
+    oliveDrab: "#6b8311",
+    lightText: "#cecece",
+    darkText: "#1d1e1e"
   },
   fonts: {
     body: "system-ui, sans-serif",

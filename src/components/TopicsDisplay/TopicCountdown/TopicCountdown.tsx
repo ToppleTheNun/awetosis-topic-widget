@@ -43,14 +43,14 @@ const TopicCountdown: React.FC<TopicCountdownProps> = ({
 
   if (seconds < 0 || currentTopic === null) {
     return (
-      <Box bg="secondary" px={2} py={2}>
-        <Heading color="background">No Current Topics</Heading>
+      <Box bg="eerieBlack" px={2} py={2}>
+        <Heading color="lightText">No Current Topics</Heading>
       </Box>
     );
   }
   return (
-    <Box bg="secondary" px={2} py={2}>
-      <Heading color="background">{seconds}s Remaining</Heading>
+    <Box bg="eerieBlack" px={2} py={2}>
+      <Heading color="lightText">{seconds}s Remaining</Heading>
     </Box>
   );
 };

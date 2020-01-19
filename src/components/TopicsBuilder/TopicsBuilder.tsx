@@ -1,21 +1,23 @@
 import React, { useCallback, useState } from "react";
-import { Box } from "rebass";
+import { Box, Flex } from "rebass";
 import { Redirect } from "react-router-dom";
 
 import TopicsBuilderNavbar from "./TopicsBuilderNavbar";
 import TopicsBuilderForm from "./TopicsBuilderForm";
 import { FormTopic, Topic } from "../../types";
-import useQuery from "../../hooks/useQuery";
 import {
   formTopicsToTopics,
   parseJsonStringToTopics,
   topicsToFormTopics
 } from "../../utils/topics";
 
+const urlSearchParams = new URLSearchParams(window.location.search);
+const topicsFromQuery: Topic[] = parseJsonStringToTopics(
+  urlSearchParams.get("topics")
+).filter(topic => topic.amount > 0 && topic.text !== "");
+
 const TopicsBuilder: React.FC = () => {
-  const query = useQuery();
-  const initialTopics: Topic[] = parseJsonStringToTopics(query.get("topics"));
-  const [topics, setTopics] = useState<Topic[]>([]);
+  const [topics, setTopics] = useState<Topic[]>(topicsFromQuery);
   const [goToDisplay, setGoToDisplay] = useState(false);
 
   const setFilteredTopics = useCallback((formTopics: FormTopic[]) => {
@@ -30,11 +32,11 @@ const TopicsBuilder: React.FC = () => {
   }
 
   return (
-    <Box>
+    <Box bg="pastelGray" height="100vh" width="100vw">
       <TopicsBuilderNavbar />
-      <Box width={[1, 3 / 4]} mx="auto">
+      <Box mx="auto" width={[1, 3 / 4]}>
         <TopicsBuilderForm
-          initialTopics={topicsToFormTopics(initialTopics)}
+          topics={topicsToFormTopics(topics)}
           setTopics={setFilteredTopics}
         />
       </Box>

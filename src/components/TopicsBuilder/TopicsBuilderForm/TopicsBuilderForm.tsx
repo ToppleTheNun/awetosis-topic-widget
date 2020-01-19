@@ -8,7 +8,7 @@ import { FormTopic, TemporalUnit } from "../../../types";
 import { capitalize } from "../../../utils/strings";
 
 type TopicsBuilderFormProps = {
-  initialTopics?: FormTopic[];
+  topics: FormTopic[];
   setTopics: (topics: FormTopic[]) => void;
 };
 
@@ -33,20 +33,20 @@ const formTopicsToFieldValues = (formTopics: FormTopic[]): FieldValues => {
 };
 
 const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
-  initialTopics = [{ ...blankFormTopic }],
+  topics,
   setTopics
 }) => {
   const { handleSubmit, register } = useForm({
-    defaultValues: formTopicsToFieldValues(initialTopics)
+    defaultValues: formTopicsToFieldValues(topics)
   });
-  const [size, setSize] = useState(initialTopics.length);
+  const [size, setSize] = useState(topics.length);
   const onSubmit = handleSubmit((values: FieldValues) => {
     const topics: FormTopic[] = [];
     for (let i = 1; i <= size; i += 1) {
       topics.push({
         text: values[`topic-${i}-text`],
         amount: values[`topic-${i}-amount`],
-        unit: values[`topic-${i}-unit`]
+        unit: values[`topic-${i}-unit`].toUpperCase()
       });
     }
     setTopics(topics);
@@ -108,8 +108,11 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
       })}
       <Flex flexWrap="wrap" py={2}>
         {size > 0 && (
-          <Text pb={2} width={1}>
+          <Text color="darkText" pb={2} width={1}>
             Leave the name field blank to have the builder ignore a topic.
+            <br />
+            You need at least one topic available in order to get to the topic
+            view.
           </Text>
         )}
         <Box width={[1, "auto"]}>

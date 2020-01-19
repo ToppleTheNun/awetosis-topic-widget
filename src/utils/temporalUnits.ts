@@ -4,7 +4,8 @@ export const stringToTemporalUnit = (
   str?: string,
   def: TemporalUnit = TemporalUnit.SECONDS
 ): TemporalUnit => {
-  return TemporalUnit[str as keyof typeof TemporalUnit] || def;
+  const strUppercase = str?.toUpperCase() || "";
+  return TemporalUnit[strUppercase as keyof typeof TemporalUnit] || def;
 };
 
 export const temporalUnitAndAmountToSeconds = (

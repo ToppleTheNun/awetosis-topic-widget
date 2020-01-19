@@ -45,12 +45,13 @@ const TopicsDisplay: React.FC = () => {
       {incompleteTopics.map((topic, idx) => (
         <TopicCard
           key={`topic-${idx}`}
-          topic={topic}
+          first={idx === 0}
           sx={
             idx !== incompleteTopics.length - 1
               ? { borderBottom: "1px solid black" }
               : {}
           }
+          topic={topic}
         />
       ))}
     </Box>
