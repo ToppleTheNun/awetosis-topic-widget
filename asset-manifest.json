@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/awetosis-topic-widget/static/css/main.ee54585b.chunk.css",
-    "main.js": "/awetosis-topic-widget/static/js/main.6d54ee51.chunk.js",
-    "main.js.map": "/awetosis-topic-widget/static/js/main.6d54ee51.chunk.js.map",
+    "main.js": "/awetosis-topic-widget/static/js/main.a0b5bf25.chunk.js",
+    "main.js.map": "/awetosis-topic-widget/static/js/main.a0b5bf25.chunk.js.map",
     "runtime-main.js": "/awetosis-topic-widget/static/js/runtime-main.c9bf4073.js",
     "runtime-main.js.map": "/awetosis-topic-widget/static/js/runtime-main.c9bf4073.js.map",
     "static/js/2.a61a2506.chunk.js": "/awetosis-topic-widget/static/js/2.a61a2506.chunk.js",
     "static/js/2.a61a2506.chunk.js.map": "/awetosis-topic-widget/static/js/2.a61a2506.chunk.js.map",
     "index.html": "/awetosis-topic-widget/index.html",
-    "precache-manifest.aa4ee89ebc52031568f5e699d04f8878.js": "/awetosis-topic-widget/precache-manifest.aa4ee89ebc52031568f5e699d04f8878.js",
+    "precache-manifest.66199ac09fa7cae1bac744f0fcb119e2.js": "/awetosis-topic-widget/precache-manifest.66199ac09fa7cae1bac744f0fcb119e2.js",
     "service-worker.js": "/awetosis-topic-widget/service-worker.js",
     "static/css/main.ee54585b.chunk.css.map": "/awetosis-topic-widget/static/css/main.ee54585b.chunk.css.map",
     "static/js/2.a61a2506.chunk.js.LICENSE": "/awetosis-topic-widget/static/js/2.a61a2506.chunk.js.LICENSE"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.c9bf4073.js",
     "static/js/2.a61a2506.chunk.js",
     "static/css/main.ee54585b.chunk.css",
-    "static/js/main.6d54ee51.chunk.js"
+    "static/js/main.a0b5bf25.chunk.js"
   ]
 }

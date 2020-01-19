@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/awetosis-topic-widget/precache-manifest.aa4ee89ebc52031568f5e699d04f8878.js"
+  "/awetosis-topic-widget/precache-manifest.66199ac09fa7cae1bac744f0fcb119e2.js"
 );
 
 self.addEventListener('message', (event) => {
