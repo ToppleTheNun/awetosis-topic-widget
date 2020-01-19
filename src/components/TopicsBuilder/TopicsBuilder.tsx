@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { Box, Flex } from "rebass";
+import { Box } from "rebass";
 import { Redirect } from "react-router-dom";
 
 import TopicsBuilderNavbar from "./TopicsBuilderNavbar";

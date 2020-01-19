@@ -12,12 +12,6 @@ type TopicsBuilderFormProps = {
   setTopics: (topics: FormTopic[]) => void;
 };
 
-const blankFormTopic: FormTopic = {
-  text: "",
-  amount: "",
-  unit: TemporalUnit.MINUTES
-};
-
 const createArrayWithNumbers = (length: number): number[] => {
   return Array.from({ length }, (_, k) => k + 1);
 };
