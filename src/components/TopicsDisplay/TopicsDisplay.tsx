@@ -2,8 +2,9 @@ import React, { useCallback, useMemo, useState } from "react";
 import { Box } from "rebass";
 import { parseJsonStringToTopics } from "../../utils/topics";
 import TopicCard from "./TopicCard";
-import { DisplayTopic } from "../../types";
+import { DisplayTopic, Topic } from "../../types";
 import TopicCountdown from "./TopicCountdown";
+import useQuery from "../../hooks/useQuery";
 
 const urlSearchParams = new URLSearchParams(window.location.search);
 const topicsFromQuery: DisplayTopic[] = parseJsonStringToTopics(
@@ -13,7 +14,12 @@ const topicsFromQuery: DisplayTopic[] = parseJsonStringToTopics(
   .map((topic, idx) => ({ ...topic, complete: false, id: idx }));
 
 const TopicsDisplay: React.FC = () => {
-  const [topics, setTopics] = useState(topicsFromQuery);
+  const query = useQuery();
+  const [topics, setTopics] = useState<DisplayTopic[]>(
+    parseJsonStringToTopics(query.get("topics"))
+      .filter(topic => topic.amount > 0 && topic.text !== "")
+      .map((topic, idx) => ({ ...topic, complete: false, id: idx }))
+  );
   const incompleteTopics = useMemo(
     () => topics.filter(topic => !topic.complete),
     [topics]

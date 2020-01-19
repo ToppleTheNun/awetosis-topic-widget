@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Redirect,
   Route,
   Switch
@@ -14,14 +14,14 @@ const App: React.FC = () => (
   <ThemedApp>
     <Router>
       <Switch>
-        <Route exact path={`${process.env.PUBLIC_URL}/display`}>
+        <Route exact path={`/display`}>
           <TopicsDisplay />
         </Route>
-        <Route exact path={`${process.env.PUBLIC_URL}/`}>
+        <Route exact path={`/`}>
           <TopicsBuilder />
         </Route>
         <Route>
-          <Redirect to={`${process.env.PUBLIC_URL}/`} />
+          <Redirect to={`/`} />
         </Route>
       </Switch>
     </Router>

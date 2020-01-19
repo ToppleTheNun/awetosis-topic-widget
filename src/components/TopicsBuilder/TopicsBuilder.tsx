@@ -10,14 +10,15 @@ import {
   parseJsonStringToTopics,
   topicsToFormTopics
 } from "../../utils/topics";
-
-const urlSearchParams = new URLSearchParams(window.location.search);
-const topicsFromQuery: Topic[] = parseJsonStringToTopics(
-  urlSearchParams.get("topics")
-).filter(topic => topic.amount > 0 && topic.text !== "");
+import useQuery from "../../hooks/useQuery";
 
 const TopicsBuilder: React.FC = () => {
-  const [topics, setTopics] = useState<Topic[]>(topicsFromQuery);
+  const query = useQuery();
+  const [topics, setTopics] = useState<Topic[]>(
+    parseJsonStringToTopics(query.get("topics")).filter(
+      topic => topic.amount > 0 && topic.text !== ""
+    )
+  );
   const [goToDisplay, setGoToDisplay] = useState(false);
 
   const setFilteredTopics = useCallback((formTopics: FormTopic[]) => {
@@ -28,13 +29,7 @@ const TopicsBuilder: React.FC = () => {
   }, []);
 
   if (goToDisplay && topics.length > 0) {
-    return (
-      <Redirect
-        to={`${process.env.PUBLIC_URL}/display?topics=${JSON.stringify(
-          topics
-        )}`}
-      />
-    );
+    return <Redirect to={`/display?topics=${JSON.stringify(topics)}`} />;
   }
 
   return (
