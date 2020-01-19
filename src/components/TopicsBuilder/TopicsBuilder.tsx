@@ -28,7 +28,13 @@ const TopicsBuilder: React.FC = () => {
   }, []);
 
   if (goToDisplay && topics.length > 0) {
-    return <Redirect to={`/display?topics=${JSON.stringify(topics)}`} />;
+    return (
+      <Redirect
+        to={`${process.env.PUBLIC_URL}/display?topics=${JSON.stringify(
+          topics
+        )}`}
+      />
+    );
   }
 
   return (
