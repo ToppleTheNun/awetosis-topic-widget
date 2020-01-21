@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Heading } from "rebass";
 
+import orcFace from "../../../assets/orc_face.png";
 import { DisplayTopic } from "../../../types";
 import { temporalUnitAndAmountToSeconds } from "../../../utils/temporalUnits";
 
@@ -41,13 +42,33 @@ const TopicCountdown: React.FC<TopicCountdownProps> = ({
 
   if (seconds < 0 || currentTopic === null) {
     return (
-      <Box bg="eerieBlack" px={2} py={2}>
+      <Box
+        bg="eerieBlack"
+        px={2}
+        py={2}
+        sx={{
+          backgroundImage: `url(${orcFace})`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center right",
+          backgroundSize: "contain"
+        }}
+      >
         <Heading color="lightText">No Current Topics</Heading>
       </Box>
     );
   }
   return (
-    <Box bg="eerieBlack" px={2} py={2}>
+    <Box
+      bg="eerieBlack"
+      px={2}
+      py={2}
+      sx={{
+        backgroundImage: `url(${orcFace})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center right",
+        backgroundSize: "contain"
+      }}
+    >
       <Heading color="lightText">{seconds}s Remaining</Heading>
     </Box>
   );
