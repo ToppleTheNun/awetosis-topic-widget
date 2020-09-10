@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/awetosis-topic-widget/static/css/main.ee54585b.chunk.css",
-    "main.js": "/awetosis-topic-widget/static/js/main.7f027794.chunk.js",
-    "main.js.map": "/awetosis-topic-widget/static/js/main.7f027794.chunk.js.map",
-    "runtime-main.js": "/awetosis-topic-widget/static/js/runtime-main.c9bf4073.js",
-    "runtime-main.js.map": "/awetosis-topic-widget/static/js/runtime-main.c9bf4073.js.map",
-    "static/js/2.a51d0e2c.chunk.js": "/awetosis-topic-widget/static/js/2.a51d0e2c.chunk.js",
-    "static/js/2.a51d0e2c.chunk.js.map": "/awetosis-topic-widget/static/js/2.a51d0e2c.chunk.js.map",
+    "main.js": "/awetosis-topic-widget/static/js/main.6cb5bee5.chunk.js",
+    "main.js.map": "/awetosis-topic-widget/static/js/main.6cb5bee5.chunk.js.map",
+    "runtime-main.js": "/awetosis-topic-widget/static/js/runtime-main.68f7044b.js",
+    "runtime-main.js.map": "/awetosis-topic-widget/static/js/runtime-main.68f7044b.js.map",
+    "static/js/2.3dcf39c0.chunk.js": "/awetosis-topic-widget/static/js/2.3dcf39c0.chunk.js",
+    "static/js/2.3dcf39c0.chunk.js.map": "/awetosis-topic-widget/static/js/2.3dcf39c0.chunk.js.map",
     "index.html": "/awetosis-topic-widget/index.html",
-    "precache-manifest.5e68d4bc02e895eea6240317981f09b8.js": "/awetosis-topic-widget/precache-manifest.5e68d4bc02e895eea6240317981f09b8.js",
+    "precache-manifest.d6cdf91e0118950a81843307ad3db3b4.js": "/awetosis-topic-widget/precache-manifest.d6cdf91e0118950a81843307ad3db3b4.js",
     "service-worker.js": "/awetosis-topic-widget/service-worker.js",
     "static/css/main.ee54585b.chunk.css.map": "/awetosis-topic-widget/static/css/main.ee54585b.chunk.css.map",
-    "static/js/2.a51d0e2c.chunk.js.LICENSE": "/awetosis-topic-widget/static/js/2.a51d0e2c.chunk.js.LICENSE",
+    "static/js/2.3dcf39c0.chunk.js.LICENSE.txt": "/awetosis-topic-widget/static/js/2.3dcf39c0.chunk.js.LICENSE.txt",
     "static/media/orc_face.png": "/awetosis-topic-widget/static/media/orc_face.4899ed6e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.c9bf4073.js",
-    "static/js/2.a51d0e2c.chunk.js",
+    "static/js/runtime-main.68f7044b.js",
+    "static/js/2.3dcf39c0.chunk.js",
     "static/css/main.ee54585b.chunk.css",
-    "static/js/main.7f027794.chunk.js"
+    "static/js/main.6cb5bee5.chunk.js"
   ]
 }
