@@ -14,14 +14,14 @@ const App: React.FC = () => (
   <ThemedApp>
     <Router>
       <Switch>
-        <Route exact path={`/awetosis-topic-widget`}>
+        <Route exact path={`/`}>
           <TopicsBuilder />
         </Route>
-        <Route path={`/awetosis-topic-widget/display`}>
+        <Route path={`/display`}>
           <TopicsDisplay />
         </Route>
         <Route path="*">
-          <Redirect to={`/awetosis-topic-widget`} />
+          <Redirect to={`/`} />
         </Route>
       </Switch>
     </Router>

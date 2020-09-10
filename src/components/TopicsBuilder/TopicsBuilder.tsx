@@ -37,7 +37,7 @@ const TopicsBuilder: React.FC = () => {
       setDisplayUrl(
         `${window.location.protocol}//${host}${
           window.location.pathname
-        }/display?topics=${btoa(JSON.stringify(topics))}`
+        }display?topics=${btoa(JSON.stringify(topics))}`
       );
     } else {
       setDisplayUrl(null);
