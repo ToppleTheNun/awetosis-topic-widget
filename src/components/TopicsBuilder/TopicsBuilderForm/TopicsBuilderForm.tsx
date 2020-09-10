@@ -118,12 +118,18 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
         );
       })}
       <Flex flexWrap="wrap" py={2}>
+        {size === 0 && (
+          <Text color="darkText" pb={2} width={1}>
+            Click on "ADD TOPIC" to get started.
+          </Text>
+        )}
         {size > 0 && (
           <Text color="darkText" pb={2} width={1}>
             Leave the name field blank to have the builder ignore a topic.
             <br />
             You can also leave the amount field at 0 to have the builder ignore
             a topic.
+            <br />
             <br />
             You need at least one topic available in order to generate the topic
             view.
