@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Redirect,
   Route,
-  Switch
+  Switch,
 } from "react-router-dom";
 
 import ThemedApp from "../ThemedApp";
@@ -14,13 +14,13 @@ const App: React.FC = () => (
   <ThemedApp>
     <Router>
       <Switch>
-        <Route exact path={`/display`}>
-          <TopicsDisplay />
-        </Route>
         <Route exact path={`/`}>
           <TopicsBuilder />
         </Route>
-        <Route>
+        <Route path={`/display`}>
+          <TopicsDisplay />
+        </Route>
+        <Route path="*">
           <Redirect to={`/`} />
         </Route>
       </Switch>

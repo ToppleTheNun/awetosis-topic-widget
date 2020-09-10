@@ -3,13 +3,16 @@ import { Box, Button, Card, Flex, Text } from "rebass";
 import { Input, Label, Select } from "@rebass/forms";
 import { useForm } from "react-hook-form";
 import { FieldValues } from "react-hook-form";
+import useClippy from "use-clippy";
 
 import { FormTopic, TemporalUnit } from "../../../types";
 import { capitalize } from "../../../utils/strings";
+import useTimedValue from "../../../hooks/useTimedValue";
 
 type TopicsBuilderFormProps = {
-  topics: FormTopic[];
+  displayUrl: string | null;
   setTopics: (topics: FormTopic[]) => void;
+  topics: FormTopic[];
 };
 
 const createArrayWithNumbers = (length: number): number[] => {
@@ -27,32 +30,46 @@ const formTopicsToFieldValues = (formTopics: FormTopic[]): FieldValues => {
 };
 
 const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
+  displayUrl,
+  setTopics,
   topics,
-  setTopics
 }) => {
   const { handleSubmit, register } = useForm({
-    defaultValues: formTopicsToFieldValues(topics)
+    defaultValues: formTopicsToFieldValues(topics),
   });
   const [size, setSize] = useState(topics.length);
+  const [, setClipboard] = useClippy();
+  const { toggleValue: copiedToggle, value: copiedText } = useTimedValue(
+    "Copy",
+    "Copied!",
+    3000
+  );
   const onSubmit = handleSubmit((values: FieldValues) => {
     const topics: FormTopic[] = [];
     for (let i = 1; i <= size; i += 1) {
       topics.push({
         text: values[`topic-${i}-text`],
         amount: values[`topic-${i}-amount`],
-        unit: values[`topic-${i}-unit`].toUpperCase()
+        unit: values[`topic-${i}-unit`].toUpperCase(),
       });
     }
     setTopics(topics);
   });
 
   const addTopic = useCallback(() => {
-    setSize(prevState => prevState + 1);
+    setSize((prevState) => prevState + 1);
   }, []);
+
+  const handleCopy = useCallback(() => {
+    if (displayUrl) {
+      setClipboard(displayUrl);
+      copiedToggle();
+    }
+  }, [copiedToggle, displayUrl, setClipboard]);
 
   return (
     <Box as="form" onSubmit={onSubmit} px={2}>
-      {createArrayWithNumbers(size).map(idx => {
+      {createArrayWithNumbers(size).map((idx) => {
         const topicId = `topic-${idx}`;
         const topicText = `${topicId}-text`;
         const topicAmount = `${topicId}-amount`;
@@ -91,7 +108,7 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
                   data-idx={idx}
                   ref={register}
                 >
-                  {Object.keys(TemporalUnit).map(unit => (
+                  {Object.keys(TemporalUnit).map((unit) => (
                     <option key={unit.toLowerCase()}>{capitalize(unit)}</option>
                   ))}
                 </Select>
@@ -105,7 +122,7 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
           <Text color="darkText" pb={2} width={1}>
             Leave the name field blank to have the builder ignore a topic.
             <br />
-            You need at least one topic available in order to get to the topic
+            You need at least one topic available in order to generate the topic
             view.
           </Text>
         )}
@@ -122,6 +139,25 @@ const TopicsBuilderForm: React.FC<TopicsBuilderFormProps> = ({
           </Box>
         )}
       </Flex>
+      {size > 0 && displayUrl && (
+        <Box width={[1, 1 / 2]}>
+          <Box width={[1, "auto"]}>
+            <Label htmlFor="awetosis-topic-display-url">Display URL</Label>
+            <Input
+              backgroundColor="white"
+              disabled
+              id="awetosis-topic-display-url"
+              value={displayUrl}
+            />
+          </Box>
+          <Button onClick={handleCopy} mt={2} width={[1, "auto"]}>
+            {copiedText}
+          </Button>
+          <Text color="darkText" pt={2} pb={2} width={1}>
+            Paste the URL into a source in StreamLabs OBS.
+          </Text>
+        </Box>
+      )}
     </Box>
   );
 };
