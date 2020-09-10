@@ -29,15 +29,19 @@ const TopicsBuilder: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    let host = window.location.hostname;
-    if (window.location.port !== "") {
-      host = `${window.location.hostname}:${window.location.port}`;
+    if (topics.length > 0) {
+      let host = window.location.hostname;
+      if (window.location.port !== "") {
+        host = `${window.location.hostname}:${window.location.port}`;
+      }
+      setDisplayUrl(
+        `${window.location.protocol}//${host}${
+          window.location.pathname
+        }/display?topics=${btoa(JSON.stringify(topics))}`
+      );
+    } else {
+      setDisplayUrl(null);
     }
-    setDisplayUrl(
-      `${window.location.protocol}//${host}${
-        window.location.pathname
-      }display?topics=${btoa(JSON.stringify(topics))}`
-    );
   }, [topics]);
 
   return (
