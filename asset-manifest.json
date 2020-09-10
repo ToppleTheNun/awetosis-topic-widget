@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/awetosis-topic-widget/static/css/main.ee54585b.chunk.css",
-    "main.js": "/awetosis-topic-widget/static/js/main.c31c418c.chunk.js",
-    "main.js.map": "/awetosis-topic-widget/static/js/main.c31c418c.chunk.js.map",
-    "runtime-main.js": "/awetosis-topic-widget/static/js/runtime-main.68f7044b.js",
-    "runtime-main.js.map": "/awetosis-topic-widget/static/js/runtime-main.68f7044b.js.map",
-    "static/js/2.3dcf39c0.chunk.js": "/awetosis-topic-widget/static/js/2.3dcf39c0.chunk.js",
-    "static/js/2.3dcf39c0.chunk.js.map": "/awetosis-topic-widget/static/js/2.3dcf39c0.chunk.js.map",
-    "index.html": "/awetosis-topic-widget/index.html",
-    "precache-manifest.095f300affdd787face032168996a738.js": "/awetosis-topic-widget/precache-manifest.095f300affdd787face032168996a738.js",
-    "service-worker.js": "/awetosis-topic-widget/service-worker.js",
-    "static/css/main.ee54585b.chunk.css.map": "/awetosis-topic-widget/static/css/main.ee54585b.chunk.css.map",
-    "static/js/2.3dcf39c0.chunk.js.LICENSE.txt": "/awetosis-topic-widget/static/js/2.3dcf39c0.chunk.js.LICENSE.txt",
-    "static/media/orc_face.png": "/awetosis-topic-widget/static/media/orc_face.4899ed6e.png"
+    "main.css": "/static/css/main.ee54585b.chunk.css",
+    "main.js": "/static/js/main.9fe087cf.chunk.js",
+    "main.js.map": "/static/js/main.9fe087cf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.f8dbcd91.js",
+    "runtime-main.js.map": "/static/js/runtime-main.f8dbcd91.js.map",
+    "static/js/2.3dcf39c0.chunk.js": "/static/js/2.3dcf39c0.chunk.js",
+    "static/js/2.3dcf39c0.chunk.js.map": "/static/js/2.3dcf39c0.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.ada6a5c9e7d6acd9d4faeb51ca8bc351.js": "/precache-manifest.ada6a5c9e7d6acd9d4faeb51ca8bc351.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ee54585b.chunk.css.map": "/static/css/main.ee54585b.chunk.css.map",
+    "static/js/2.3dcf39c0.chunk.js.LICENSE.txt": "/static/js/2.3dcf39c0.chunk.js.LICENSE.txt",
+    "static/media/orc_face.png": "/static/media/orc_face.4899ed6e.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.68f7044b.js",
+    "static/js/runtime-main.f8dbcd91.js",
     "static/js/2.3dcf39c0.chunk.js",
     "static/css/main.ee54585b.chunk.css",
-    "static/js/main.c31c418c.chunk.js"
+    "static/js/main.9fe087cf.chunk.js"
   ]
 }
